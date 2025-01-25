@@ -1,8 +1,62 @@
 var playerName = window.prompt("What is your robot's name?");
+var playerHealth = 100
+var playerAttack = 10;
+var playerMoney = 10;
 
+console.log(playerName, playerHealth, playerAttack)
 
-function fight(){
-    window.alert("The fight has begun!");
-}
+var enemyName = "Roberto";
+var enemyHealth = 50;
+var enemyAttack = 12; 
+
+var fight = function() {
+    // Alert players that they are starting the round
+    window.alert("Welcome to Robot Gladiators!");
+
+    var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
+
+    if (promptFight === "FIGHT"|| promptFight === "fight"){
+        attackRobot();
+    } else if (promptFight ==="SKIP" || promptFight === "skip") {
+        var skipFight = window.confirm("Are you sure you want to quit?");
+        if (skipFight){
+            playerMoney = playerMoney - 2;
+            window.alert("You have left the fight.  You have " + playerMoney + " gold coins left.")
+        } else{
+            attackRobot();
+        }
+    }
+    else {
+        window.alert("Please choose a correct option");
+        fight();
+    }
+  
+   
+ 
+  };
+ function attackRobot(){
+ //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
+ enemyHealth = enemyHealth - playerAttack;
+ 
+ if(enemyHealth <= 0){
+   window.alert(enemyName + " has died!")
+ }
+ else {
+   window.alert(
+    playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+  );
+ }
+   // Subtract the value of `enemyAttack` from the value of `playerHealth` and use that result to update the value in the `playerHealth` variable.
+ playerHealth = playerHealth - enemyAttack
+
+   
+ if (playerHealth <= 0) {
+   window.alert("You have died!")
+ } else {
+   window.alert(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+   );
+ }
+ }
+
 
 fight();
