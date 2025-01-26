@@ -8,38 +8,10 @@ var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12; 
 
-// var enemy = [
-//     {
-//         name: "roberto",
-//         health: 50,
-//         attack: 12
-//     },
-//     {
-//         name: "Amy Android",
-//         health: 50,
-//         attack: 12
-//     },
-//     {
-//         name: "Robo Trumble",
-//         health: 50,
-//         attack: 12
-//     }
-// ]
-
-
-
-
-/*Game states 
-WIN GAME - PLAYER defeats all robots
-FIGHTS ROBOTS - player must fight all robots
-DEFEATS ROBOTS - player must defeat all robots
-
-LOSE GAME - player runs out of health points
-*/
-
 var fight = function(enemyNames) {
-    // console.log(enemyNames); 
+    
     while(enemyHealth > 0) {
+
     // Alert players that they are starting the round
     // window.alert("Welcome to Robot Gladiators!");
 
@@ -52,7 +24,7 @@ var fight = function(enemyNames) {
  
  if(enemyHealth <= 0){
    window.alert(enemyNames + " has died!")
-//    enemyHealth = 10;
+
  }
  else {
    console.log(
@@ -83,11 +55,11 @@ var fight = function(enemyNames) {
         fight(enemyNames);
     }
 }
-  };
+};
 //  function attackRobot(enemyNames){
 //  //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
 //  enemyHealth = enemyHealth - playerAttack;
- 
+
 //  if(enemyHealth <= 0){
 //    window.alert(enemyNames + " has died!")
 //  }
@@ -99,7 +71,7 @@ var fight = function(enemyNames) {
 //    // Subtract the value of `enemyAttack` from the value of `playerHealth` and use that result to update the value in the `playerHealth` variable.
 //  playerHealth = playerHealth - enemyAttack
 
-   
+
 //  if (playerHealth <= 0) {
 //    window.alert("You have died!")
 //  } else {
@@ -109,12 +81,10 @@ var fight = function(enemyNames) {
 //  }
 
 
- for(var i = 0; i < enemyNames.length; i++) {
+for(var i = 0; i < enemyNames.length; i++) {
     var pickedEnemyName = enemyNames[i];
     enemyHealth = 50;
-    // debugger;
-    // console.log(enemyNames[i])
     fight(pickedEnemyName);
     
-  }
-// fight();
+}
+
