@@ -90,9 +90,21 @@ var fight = function(enemyNames) {
 
 
 for(var i = 0; i < enemyNames.length; i++) {
-    var pickedEnemyName = enemyNames[i];
-    enemyHealth = 50;
-    fight(pickedEnemyName);
+    //checks if player health is above 0
+    if (playerHealth > 0) {
+        //notifies Player that they are starting the rounds.  Round number is based on index plus 1
+        window.alert("Welcome to Robot Gladiators.  This is Round #" + (i + 1))
+        // pickedEnemyName is based off of index of robots in the enemyNames array
+        var pickedEnemyName = enemyNames[i];
+        //resets enemyHealth to 50
+        enemyHealth = 50;
+        //calls the fight function, passing the pickedEnemyName variable as an argument
+        fight(pickedEnemyName);
+    } else {
+        window.alert("You have lost your robot in battle.  Game Over");
+        break;
+    }
+    
     
 }
 
